@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { handleBackground } from "../layoutHelper"
 const props = defineProps({
-	imageTop: {
+	image1: {
 		type: String,
 	},
-	imageBottom: {
+	image2: {
 		type: String,
 	},
 	caption1: {
 		type: String,
 	},
 	caption2: {
+		type: String,
+	},
+	linkSrc1: {
+		type: String,
+	},
+	linkSrc2: {
 		type: String,
 	},
 })
@@ -25,13 +31,21 @@ const props = defineProps({
 		</div>
 		<div class="caption relative">
 			<div class="absolute right-0">
-				<p>{{ props.caption1 }}</p>
-				<p>{{ props.caption2 }}</p>
+				<p>{{ props.caption1 }}<br/>
+					<a v-if="props.linkSrc1" :href="props.linkSrc1" target="_blank" alt="test">{{  props.linkSrc1.slice(0, 15) + '...'}}</a>
+				</p>
+				<p>{{ props.caption2 }}<br/>
+					<a v-if="props.linkSrc2" :href="props.linkSrc2" target="_blank" alt="test">{{ props.linkSrc2.slice(0, 15) + '...' }}</a>
+				</p>
 			</div>
 		</div>
 		<div class="grid grid-row-2 gap-y-4">
-			<div class="bg-green" :style="handleBackground(props.imageTop)"></div>
-			<div class="bg-red" :style="handleBackground(props.imageBottom)"></div>
+			<div :class="props.linkSrc1 ? 'transform' : ''" class="hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image1)">
+				<a v-if="props.linkSrc1" class="w-full h-full absolute " :href="props.linkSrc1" target="_blank" alt="test"></a>
+			</div>
+			<div :class="props.linkSrc2 ? 'transform' : ''" class="hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image2)">
+				<a v-if="props.linkSrc2" class="w-full h-full absolute " :href="props.linkSrc2" target="_blank" alt="test"></a>
+			</div>
 		</div>
 	</div>
 </template>

@@ -24,10 +24,12 @@ Use following props in FRONTMATTER/YAML zone:
 
 ---
 layout: text-2-images
-imageTop: 'https://source.unsplash.com/collection/94734566/1080x1920'
+image1: 'https://source.unsplash.com/collection/94734566/1080x1920'
 caption1: 'Top picture: unsplash api'
-imageBottom: 'https://source.unsplash.com/collection/94734566/1080x1920'
+linkSrc1:  'https://source.unsplash.com/collection/94734566/1920x1080'
+image2: 'https://source.unsplash.com/collection/94734566/1080x1920'
 caption2: 'Bottom picture: unsplash api'
+linkSrc2:  ''
 ---
 
 ## Layout: text-2-images

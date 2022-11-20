@@ -22,12 +22,14 @@ const props = defineProps({
 		</div>
 		<div class="caption relative">
 			<div v-if="props.caption" class="absolute right-0">
-				<p>{{ props.caption }}</p>
+				<p>{{ props.caption }}<br/>
+					<a :href="props.linkSrc" target="_blank" alt="test">{{props.linkSrc.slice(0, 15)}}...</a>
+				</p>
 			</div>
 		</div>
 		<div class="grid grid-row-2 gap-y-4">
 			<div class="transform hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image)">
-				<a class="w-full h-full absolute " :href="props.linkSrc" alt="test"></a>
+				<a class="w-full h-full absolute " :href="props.linkSrc" target="_blank" alt="test"></a>
 			</div>
 			<div class="bg-white"></div>
 		</div>
@@ -39,6 +41,9 @@ const props = defineProps({
 	p {
 		@apply: text-left mr-5 w-200px text-xs pt-.5 mb-3;
 		border-top: 0.3px solid black;
+		a {
+			@apply underline;
+		}
 	}
 }
 </style>
