@@ -25,6 +25,18 @@ const props = defineProps({
 	caption4: {
 		type: String,
 	},
+	linkSrc1: {
+		type: String,
+	},
+	linkSrc2: {
+		type: String,
+	},
+	linkSrc3: {
+		type: String,
+	},
+	linkSrc4: {
+		type: String,
+	},
 })
 </script>
 
@@ -33,24 +45,40 @@ const props = defineProps({
 		<div class="caption relative grid grid-row-2 gap-y-4">
 			<div>
 				<div class="absolute right-0">
-					<p>{{ props.caption1 }}</p>
-					<p>{{ props.caption2 }}</p>
+					<p>{{ props.caption1 }}<br/>
+						<a v-if="props.linkSrc1" :href="props.linkSrc1" target="_blank" alt="test">{{  props.linkSrc1.slice(0, 15) + '...'}}</a>
+					</p>
+					<p>{{ props.caption2 }}<br/>
+						<a v-if="props.linkSrc2" :href="props.linkSrc2" target="_blank" alt="test">{{ props.linkSrc2.slice(0, 15) + '...' }}</a>
+					</p>
 				</div>
 			</div>
 			<div>
-				<div class="absolute right-0 top-50%">
-					<p>{{ props.caption3 }}</p>
-					<p>{{ props.caption4 }}</p>
+				<div class="absolute right-0 t4p-50%">
+					<p>{{ props.caption3 }}<br/>
+						<a v-if="props.linkSrc3" :href="props.linkSrc3" target="_blank" alt="test">{{  props.linkSrc3.slice(0, 15) + '...'}}</a>
+					</p>
+					<p>{{ props.caption4 }}<br/>
+						<a v-if="props.linkSrc4" :href="props.linkSrc4" target="_blank" alt="test">{{ props.linkSrc4.slice(0, 15) + '...' }}</a>
+					</p>
 				</div>
 			</div>
 		</div>
 		<div class="grid grid-row-2 gap-y-4 mr-4">
-			<div class="test" :style="handleBackground(props.image1)"></div>
-			<div :style="handleBackground(props.image2)"></div>
+			<div :class="props.linkSrc1 ? 'transform' : ''" class="hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image1)">
+				<a v-if="props.linkSrc1" class="w-full h-full absolute " :href="props.linkSrc1" target="_blank" alt="test"></a>
+			</div>
+			<div :class="props.linkSrc2 ? 'transform' : ''" class="hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image2)">
+				<a v-if="props.linkSrc2" class="w-full h-full absolute " :href="props.linkSrc2" target="_blank" alt="test"></a>
+			</div>
 		</div>
 		<div class="grid grid-row-2 gap-y-4">
-			<div :style="handleBackground(props.image3)"></div>
-			<div :style="handleBackground(props.image4)"></div>
+			<div :class="props.linkSrc3 ? 'transform' : ''" class="hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image3)">
+				<a v-if="props.linkSrc3" class="w-full h-full absolute " :href="props.linkSrc3" target="_blank" alt="test"></a>
+			</div>
+			<div :class="props.linkSrc4 ? 'transform' : ''" class="hover:(scale-101 rotate-2) transition-transform duration-200" :style="handleBackground(props.image4)">
+				<a v-if="props.linkSrc4" class="w-full h-full absolute " :href="props.linkSrc4" target="_blank" alt="test"></a>
+			</div>
 		</div>
 	</div>
 </template>

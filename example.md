@@ -79,13 +79,17 @@ Use following props in FRONTMATTER/YAML zone:
 ---
 layout: 4-images
 image1: 'https://source.unsplash.com/collection/94734566/1080x1920'
-caption1: 'Left picture: unsplash api'
+caption1: 'Left: unsplash api'
+linkSrc1:  'https://source.unsplash.com/collection/94734566/1920x1080'
 image2: 'https://source.unsplash.com/collection/94734566/1080x1920'
-caption2: 'Right picture: unsplash api'
+caption2: 'Right: unsplash api'
+linkSrc2:  'https://source.unsplash.com/collection/94734566/1080x1920'
 image3: 'https://source.unsplash.com/collection/94734566/1080x1920'
-caption3: 'Left picture: unsplash api'
+caption3: 'Left: unsplash api'
+linkSrc3:  'https://source.unsplash.com/collection/94734566/1920x1080'
 image4: 'https://source.unsplash.com/collection/94734566/1080x1920'
-caption4: 'Right picture: unsplash api'
+caption4: 'Right: unsplash api'
+linkSrc4: 'https://source.unsplash.com/collection/94734566/1080x1920'
 ---
 
 ## Layout: 4-images
@@ -94,10 +98,14 @@ Simple layout with 4 images in landscape format and optional caption.
 
 Use following props in FRONTMATTER/YAML zone:
 - image1: '[YOUR URL]'
+- linkSrc1: '[YOUR URL]'
 - caption1: '[YOUR CAPTION]'
 - image2: '[YOUR URL]'
+- linkSrc2: '[YOUR URL]'
 - caption2: '[YOUR CAPTION]'
 - image3: '[YOUR URL]'
+- linkSrc3: '[YOUR URL]'
 - caption3: '[YOUR CAPTION]'
 - image4: '[YOUR URL]'
+- linkSrc4: '[YOUR URL]'
 - caption4: '[YOUR CAPTION]'
