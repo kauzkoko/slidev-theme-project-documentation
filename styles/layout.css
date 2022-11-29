@@ -6,6 +6,11 @@ html {
 	font-family: 'Helvetica Neue', Roboto;
 }
 
+a {
+	font-style: italic;
+	text-decoration: none;
+}
+
 .slidev-layout {
 	@apply px-14 py-10 text-[1.1rem];
 

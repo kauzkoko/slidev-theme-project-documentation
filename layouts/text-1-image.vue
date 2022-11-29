@@ -39,11 +39,8 @@ const props = defineProps({
 <style lang="scss">
 .caption {
 	p {
-		@apply: text-left mr-5 w-200px text-xs pt-.5 mb-3;
-		border-top: 0.3px solid black;
-		a {
-			@apply underline;
-		}
+		@apply text-left mr-5 w-200px text-xs pt-1 mb-3;
+		border-top: 0.3px solid gray;
 	}
 }
 </style>
